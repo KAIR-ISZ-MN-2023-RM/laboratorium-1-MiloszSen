@@ -26,7 +26,6 @@ def fib(n:int):
     Returns:
     np.ndarray: wektor n pierwszych wyrazów ciągu Fibonnaciego.
     """
-    if:
     return None
 
 def matrix_calculations(a:float):
