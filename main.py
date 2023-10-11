@@ -1,3 +1,4 @@
+import numpy as np
 def cylinder_area(r:float,h:float):
     """Obliczenie pola powierzchni walca. 
     Szczegółowy opis w zadaniu 1.
@@ -9,7 +10,11 @@ def cylinder_area(r:float,h:float):
     Returns:
     float: pole powierzchni walca 
     """
-    return None
+    if (r > 0 and h > 0):
+        P = 2 * np.pi * r * r + 2 * np.pi * r * h
+        return P
+    else:
+        return None
 
 def fib(n:int):
     """Obliczenie pierwszych n wyrazów ciągu Fibonnaciego. 
