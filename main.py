@@ -1,5 +1,6 @@
 import numpy as np
 import math
+import random
 def cylinder_area(r:float,h:float):
     """Obliczenie pola powierzchni walca. 
     Szczegółowy opis w zadaniu 1.
@@ -72,4 +73,15 @@ def custom_matrix(m:int, n:int):
     Returns:
     np.ndarray: macierz zgodna z opisem z zadania 7.
     """
-    return None
+
+    if m > 0 and n > 0 and isinstance(m, int) and isinstance(n, int) :
+        zero_matrix = np.zeros((m, n))
+        for i in range(m):
+            for j in range (n):
+                if i > j:
+                    zero_matrix[i, j] = i
+                else:
+                    zero_matrix[i, j] = j
+        return zero_matrix
+    else:
+        return None
