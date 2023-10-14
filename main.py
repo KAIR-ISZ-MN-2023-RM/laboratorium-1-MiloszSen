@@ -52,7 +52,14 @@ def matrix_calculations(a:float):
     touple: krotka zawierająca wyniki obliczeń 
     (Minv, Mt, Mdet) - opis parametrów w zadaniu 4.
     """
-    return None
+    M = np.array([[a, 1, -a], [0, 1, 1], [-a, a, 1]])
+    Mdet = np.linalg.det(M)
+    if Mdet == 0:
+        Minv = math.nan
+    else:
+        Minv = np.linalg.inv(M)
+    Mt = np.transpose(M)
+    return Minv, Mt, Mdet
 
 def custom_matrix(m:int, n:int):
     """Funkcja zwraca macierz o wymiarze mxn zgodnie 
