@@ -1,4 +1,5 @@
 import numpy as np
+import math
 def cylinder_area(r:float,h:float):
     """Obliczenie pola powierzchni walca. 
     Szczegółowy opis w zadaniu 1.
@@ -12,9 +13,9 @@ def cylinder_area(r:float,h:float):
     """
     if (r > 0 and h > 0):
         P = 2 * np.pi * r * r + 2 * np.pi * r * h
-        return Pb b
+        return P
     else:
-        return None
+        return math.nan
 
 def fib(n:int):
     """Obliczenie pierwszych n wyrazów ciągu Fibonnaciego. 
@@ -25,8 +26,19 @@ def fib(n:int):
     
     Returns:
     np.ndarray: wektor n pierwszych wyrazów ciągu Fibonnaciego.
-    """sada
-    return None
+    """
+    if n <= 0 or isinstance(n, float):
+        return None
+    elif n == 1:
+        return np.array([1.0])
+    elif n == 2:
+        return np.array([1.0, 1.0])
+    else:
+        tab = [1.0, 1.0]
+        for i in range(2, n):
+            tab.append(tab[i - 1] + tab[i - 2])
+        return np.array(tab, dtype = float).reshape(1, -1)
+
 
 def matrix_calculations(a:float):
     """Funkcja zwraca wartości obliczeń na macierzy stworzonej 
