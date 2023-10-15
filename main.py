@@ -1,6 +1,5 @@
 import numpy as np
 import math
-import random
 def cylinder_area(r:float,h:float):
     """Obliczenie pola powierzchni walca. 
     Szczegółowy opis w zadaniu 1.
